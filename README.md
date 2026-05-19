@@ -118,7 +118,7 @@ Get a free key at [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx)
 
 ## ✦ License
 
-MIT © [Your Name] — see [LICENSE](./LICENSE)
+MIT © ZISHAN SHEIKH — see [LICENSE](./LICENSE)
 
 Free to fork, remix, and build on. Credit appreciated.
 
