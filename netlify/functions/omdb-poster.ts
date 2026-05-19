@@ -42,6 +42,8 @@ function getPosterValue(poster: string | undefined) {
 
 export async function handler(event: HandlerEvent): Promise<HandlerResponse> {
   const apiKey = process.env.OMDB_API_KEY;
+  console.log("API KEY EXISTS:", !!apiKey);
+  console.log("API KEY LENGTH:", apiKey?.length);
   const title = event.queryStringParameters?.title?.trim();
   const imdbId = event.queryStringParameters?.imdbId?.trim();
 
