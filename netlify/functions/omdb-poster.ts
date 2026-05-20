@@ -1,3 +1,5 @@
+import { getStore } from "@netlify/blobs";
+
 type HandlerEvent = {
   queryStringParameters?: {
     title?: string;
@@ -42,8 +44,6 @@ function getPosterValue(poster: string | undefined) {
 
 export async function handler(event: HandlerEvent): Promise<HandlerResponse> {
   const apiKey = process.env.OMDB_API_KEY;
-  console.log("API KEY EXISTS:", !!apiKey);
-  console.log("API KEY LENGTH:", apiKey?.length);
   const title = event.queryStringParameters?.title?.trim();
   const imdbId = event.queryStringParameters?.imdbId?.trim();
 
@@ -55,8 +55,18 @@ export async function handler(event: HandlerEvent): Promise<HandlerResponse> {
     return jsonResponse(400, { error: "Provide title or imdbId" });
   }
 
-  const searchParams = new URLSearchParams({ apikey: apiKey });
+  // Cache key based on what we're looking up
+  const cacheKey = imdbId ? `imdb-${imdbId}` : `title-${title}`;
+  const store = getStore("omdb-cache");
 
+  // Check cache first
+  const cached = await store.get(cacheKey, { type: "json" });
+  if (cached) {
+    return jsonResponse(200, cached);
+  }
+
+  // Not in cache — fetch from OMDB
+  const searchParams = new URLSearchParams({ apikey: apiKey });
   if (imdbId) {
     searchParams.set("i", imdbId);
   } else if (title) {
@@ -67,9 +77,7 @@ export async function handler(event: HandlerEvent): Promise<HandlerResponse> {
     const response = await fetch(`https://www.omdbapi.com/?${searchParams}`);
 
     if (!response.ok) {
-      return jsonResponse(response.status, {
-        error: "OMDB request failed",
-      });
+      return jsonResponse(response.status, { error: "OMDB request failed" });
     }
 
     const data = (await response.json()) as OmdbResponse;
@@ -83,12 +91,17 @@ export async function handler(event: HandlerEvent): Promise<HandlerResponse> {
       });
     }
 
-    return jsonResponse(200, {
+    const result = {
       poster: getPosterValue(data.Poster),
       title: data.Title ?? title ?? "",
       year: data.Year ?? "",
       imdbID: data.imdbID ?? imdbId ?? "",
-    });
+    };
+
+    // Store in cache — no expiry, movie data doesn't change
+    await store.set(cacheKey, JSON.stringify(result));
+
+    return jsonResponse(200, result);
   } catch {
     return jsonResponse(502, {
       error: "Unable to reach OMDB",
