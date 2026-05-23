@@ -17,7 +17,8 @@
 [![Live Site](https://img.shields.io/badge/LIVE-everycinematicuniverse.com-c0392b?style=for-the-badge&logo=netlify&logoColor=white)](https://everycinematicuniverse.com)
 ![Built with Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=nextdotjs)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Deployed on Netlify](https://img.shields.io/badge/Deployed-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![Deployed on VPS](https://img.shields.io/badge/AWS_Lightsail-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+![Hosted](https://img.shields.io/badge/Hosted_on-Coolify-000000?style=flat-square&logo=coolify&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
 </div>
@@ -26,7 +27,7 @@
 
 ## ✦ What is this?
 
-**Every Cinematic Universe** is a discovery and exploration site for cinematic franchises — from the MCU to Jurassic Park, Star Wars to John Wick.
+**Every Cinematic Universe** is a discovery and exploration site for cinematic franchises — from the MCU to Jurassic Park, Star Wars to John Wick, Bollywood and more.
 
 Every universe is laid out in **chronological in-universe order**, complete with movie posters, release years, and phase/arc breakdowns. No more Googling "what order should I watch X" — it's all here.
 
@@ -41,8 +42,8 @@ Every universe is laid out in **chronological in-universe order**, complete with
 | Framework | Next.js 15 + TypeScript |
 | Styling | Tailwind CSS |
 | Data | `universe.ts` — hand-curated title arrays |
-| Posters & Years | OMDB API via Netlify Functions |
-| Hosting | Netlify |
+| Posters & Years | OMDB API |
+| Hosting | Lightsail | Coolify
 
 No database. No backend. Just a meticulously maintained `universe.ts` file and a fast frontend.
 
@@ -51,9 +52,9 @@ No database. No backend. Just a meticulously maintained `universe.ts` file and a
 ## ✦ How it Works
 
 ```
-universe.ts  →  Netlify Function  →  OMDB API  →  Poster + Year
-    │                                                     │
-    └──────────────── rendered on the timeline ◄──────────┘
+universe.ts   →  OMDB API  →  Poster + Year
+    │                                  │
+    └─── rendered on the timeline ◄────┘
 ```
 
 Each universe is a typed array of movie titles in `data/universe.ts`. The Netlify function fetches posters and release years from OMDB at runtime. That's it — deliberately simple.
@@ -64,26 +65,21 @@ Each universe is a typed array of movie titles in `data/universe.ts`. The Netlif
 
 ```bash
 # 1. Clone
-git clone https://github.com/YOUR_USERNAME/everycinematicuniverse.git
+git clone https://github.com/zishansheikhh/everycinematicuniverse.git
 cd everycinematicuniverse
 
 # 2. Install dependencies
 npm install
 
-# 3. Install Netlify CLI (required for OMDB API / Netlify Functions)
-npm install -g netlify-cli
-
-# 4. Set up environment
+# 3. Set up environment
 cp .env.example .env.local
 # → Add your OMDB API key (free at https://www.omdbapi.com/apikey.aspx)
 
-# 5. Run
+# 4. Run
 netlify dev
 ```
 
 Open [http://localhost:8888](http://localhost:8888)
-
-> ⚠️ `npm run dev` won't work for poster fetching — Netlify Functions only run via `netlify dev`
 
 ## ✦ Contributing
 
