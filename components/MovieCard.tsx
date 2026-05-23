@@ -80,7 +80,7 @@ export default function MovieCard({
       ? `imdbId=${encodeURIComponent(movie.imdbID)}`
       : `title=${encodeURIComponent(movie.title)}`;
 
-    fetch(`/.netlify/functions/omdb-poster?${searchParam}`, {
+    fetch(`/api/omdb-poster?${searchParam}`, {
       signal: abortController.signal,
     })
       .then(async (response) => {

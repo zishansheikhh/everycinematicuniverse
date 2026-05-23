@@ -1,6 +1,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import ts from "typescript";
+import { getOmdbMovie, getReleaseYearFromOmdbResult } from "../lib/omdb.ts";
 
 type MovieEntry = {
   universeKey: string;
@@ -8,12 +9,6 @@ type MovieEntry = {
   title: string;
   releaseYear: string;
   releaseYearNode: import("typescript").StringLiteralLike;
-};
-
-type OmdbResponse = {
-  Title?: unknown;
-  Year?: unknown;
-  Response?: unknown;
 };
 
 type Replacement = {
@@ -152,28 +147,10 @@ function collectMovies(sourceFile: import("typescript").SourceFile) {
   return movies;
 }
 
-function getReleaseYearFromOmdb(data: OmdbResponse) {
-  if (data.Response === "False" || typeof data.Year !== "string") {
-    return null;
-  }
-
-  const match = data.Year.match(/\d{4}/);
-  return match ? match[0] : null;
-}
-
 async function fetchReleaseYear(title: string, apiKey: string) {
-  const searchParams = new URLSearchParams({
-    apikey: apiKey,
-    t: title,
-  });
+  const result = await getOmdbMovie({ title }, apiKey);
 
-  const response = await fetch(`https://www.omdbapi.com/?${searchParams}`);
-
-  if (!response.ok) {
-    throw new Error(`OMDB request failed with ${response.status}`);
-  }
-
-  return getReleaseYearFromOmdb((await response.json()) as OmdbResponse);
+  return getReleaseYearFromOmdbResult(result);
 }
 
 function createReplacement(
