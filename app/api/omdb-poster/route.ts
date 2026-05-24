@@ -4,8 +4,12 @@ import { getOmdbMovie } from "@/lib/omdb";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const responseHeaders = {
+const cacheableResponseHeaders = {
   "Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
+};
+
+const uncacheableResponseHeaders = {
+  "Cache-Control": "no-store",
 };
 
 export async function GET(request: Request) {
@@ -17,14 +21,14 @@ export async function GET(request: Request) {
   if (!apiKey) {
     return NextResponse.json(
       { error: "OMDB_API_KEY is not configured" },
-      { status: 500, headers: responseHeaders },
+      { status: 500, headers: uncacheableResponseHeaders },
     );
   }
 
   if (!title && !imdbId) {
     return NextResponse.json(
       { error: "Provide title or imdbId" },
-      { status: 400, headers: responseHeaders },
+      { status: 400, headers: uncacheableResponseHeaders },
     );
   }
 
@@ -34,9 +38,11 @@ export async function GET(request: Request) {
 
     return NextResponse.json(body, {
       status: isFound ? 200 : 404,
-      headers: responseHeaders,
+      headers: isFound ? cacheableResponseHeaders : uncacheableResponseHeaders,
     });
-  } catch {
+  } catch (error) {
+    console.error("Unable to reach OMDB", { title, imdbId, error });
+
     return NextResponse.json(
       {
         error: "Unable to reach OMDB",
@@ -45,7 +51,7 @@ export async function GET(request: Request) {
         year: "",
         imdbID: imdbId ?? "",
       },
-      { status: 502, headers: responseHeaders },
+      { status: 502, headers: uncacheableResponseHeaders },
     );
   }
 }

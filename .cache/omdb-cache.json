@@ -1,0 +1,365 @@
+{
+  "version": 1,
+  "entries": {
+    "title:captain america: the first avenger": {
+      "cachedAt": "2026-05-23T11:39:15.414Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzUyM2YyY2MtNzNlMS00MWU5LTgxNjAtNzZlNmI2NjU2NDZlXkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg",
+        "title": "Captain America: The First Avenger",
+        "year": "2011",
+        "imdbID": "tt0458339",
+        "isFound": true
+      }
+    },
+    "title:eyes of wakanda": {
+      "cachedAt": "2026-05-23T11:39:15.488Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjhhOTE5ODgtNDFjOS00ZTdlLTgzYjAtNGU1NmM4YzkwYWMxXkEyXkFqcGc@._V1_SX300.jpg",
+        "title": "Eyes of Wakanda",
+        "year": "2025",
+        "imdbID": "tt13968252",
+        "isFound": true
+      }
+    },
+    "title:the incredible hulk": {
+      "cachedAt": "2026-05-23T11:39:15.730Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTUyNzk3MjA1OF5BMl5BanBnXkFtZTcwMTE1Njg2MQ@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "The Incredible Hulk",
+        "year": "2008",
+        "imdbID": "tt0800080",
+        "isFound": true
+      }
+    },
+    "title:thor": {
+      "cachedAt": "2026-05-23T11:39:15.769Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjRhNGZjZjEtYTQzYS00OWUxLThjNGEtMTIwMTE2ZDFlZTZkXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Thor",
+        "year": "2011",
+        "imdbID": "tt0800369",
+        "isFound": true
+      }
+    },
+    "title:thor: the dark world": {
+      "cachedAt": "2026-05-23T11:39:15.849Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTQyNzAwOTUxOF5BMl5BanBnXkFtZTcwMTE0OTc5OQ@@._V1_QL75_UY562_CR7,0,380,562_.jpg",
+        "title": "Thor: The Dark World",
+        "year": "2013",
+        "imdbID": "tt1981115",
+        "isFound": true
+      }
+    },
+    "title:iron man 3": {
+      "cachedAt": "2026-05-23T11:39:16.071Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjIzMzAzMjQyM15BMl5BanBnXkFtZTcwNzM2NjcyOQ@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Iron Man 3",
+        "year": "2013",
+        "imdbID": "tt1300854",
+        "isFound": true
+      }
+    },
+    "title:captain america: the winter soldier": {
+      "cachedAt": "2026-05-23T11:39:16.106Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWY1NjFmNDItZDhmOC00NjI1LWE0ZDItMTM0MjBjZThiOTQ2XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Captain America: The Winter Soldier",
+        "year": "2014",
+        "imdbID": "tt1843866",
+        "isFound": true
+      }
+    },
+    "title:guardians of the galaxy": {
+      "cachedAt": "2026-05-23T11:39:16.127Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2ZmNjQ2MzAtNDlhNi00MmQyLWJhZDMtNmJiMjFlOWY4MzcxXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Guardians of the Galaxy",
+        "year": "2014",
+        "imdbID": "tt2015381",
+        "isFound": true
+      }
+    },
+    "title:daredevil": {
+      "cachedAt": "2026-05-23T11:39:16.214Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BODcwOTg2MDE3NF5BMl5BanBnXkFtZTgwNTUyNTY1NjM@._V1_SX300.jpg",
+        "title": "Daredevil",
+        "year": "2015–2018",
+        "imdbID": "tt3322312",
+        "isFound": true
+      }
+    },
+    "title:jessica jones": {
+      "cachedAt": "2026-05-23T11:39:16.403Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDhhY2VlMWItMjM3Yi00MDc1LTlmYjctNjMzNDIxZjc5NGEwXkEyXkFqcGc@._V1_SX300.jpg",
+        "title": "Jessica Jones",
+        "year": "2015–2019",
+        "imdbID": "tt2357547",
+        "isFound": true
+      }
+    },
+    "title:avengers: age of ultron": {
+      "cachedAt": "2026-05-23T11:39:16.456Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BODBhYTg1NGQtNGVmNS00ZTdiLThjYTYtZDFkNzRiNTZmNDZjXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Avengers: Age of Ultron",
+        "year": "2015",
+        "imdbID": "tt2395427",
+        "isFound": true
+      }
+    },
+    "title:ant-man": {
+      "cachedAt": "2026-05-23T11:39:16.481Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+        "title": "Ant-Man",
+        "year": "2015",
+        "imdbID": "tt0478970",
+        "isFound": true
+      }
+    },
+    "title:iron fist": {
+      "cachedAt": "2026-05-23T11:39:16.727Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjI5Mjg1NDcyOV5BMl5BanBnXkFtZTgwMjAxOTQ5MTI@._V1_SX300.jpg",
+        "title": "Iron Fist",
+        "year": "2017–2018",
+        "imdbID": "tt3322310",
+        "isFound": true
+      }
+    },
+    "title:luke cage": {
+      "cachedAt": "2026-05-23T11:39:16.799Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTcyMzc1MjI5MF5BMl5BanBnXkFtZTgwMzE4ODY2OTE@._V1_SX300.jpg",
+        "title": "Luke Cage",
+        "year": "2016–2018",
+        "imdbID": "tt3322314",
+        "isFound": true
+      }
+    },
+    "title:defenders": {
+      "cachedAt": "2026-05-23T11:39:16.816Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BOWJiM2FlYmYtMThlOS00MjBmLTkzZjktNDkxYjc5MzA0Y2YwXkEyXkFqcGc@._V1_SX300.jpg",
+        "title": "Defenders",
+        "year": "2017",
+        "imdbID": "tt7176170",
+        "isFound": true
+      }
+    },
+    "title:captain america: civil war": {
+      "cachedAt": "2026-05-23T11:39:16.854Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Captain America: Civil War",
+        "year": "2016",
+        "imdbID": "tt3498820",
+        "isFound": true
+      }
+    },
+    "title:guardians of the galaxy vol. 2": {
+      "cachedAt": "2026-05-23T11:39:16.938Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+        "title": "Guardians of the Galaxy: Vol. 2",
+        "year": "2017",
+        "imdbID": "tt3896198",
+        "isFound": true
+      }
+    },
+    "title:captain marvel": {
+      "cachedAt": "2026-05-23T11:39:17.008Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDI1NGU2ODAtNzBiNy00MWY5LWIyMGEtZjUxZjUwZmZiNjBlXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Captain Marvel",
+        "year": "2019",
+        "imdbID": "tt4154664",
+        "isFound": true
+      }
+    },
+    "title:black panther": {
+      "cachedAt": "2026-05-23T11:39:17.189Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Black Panther",
+        "year": "2018",
+        "imdbID": "tt1825683",
+        "isFound": true
+      }
+    },
+    "title:the punisher": {
+      "cachedAt": "2026-05-23T11:39:17.231Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTI2NDllMjgtOWEyYi00Y2YxLThhYjQtNTQ0NTgwNDE1YmYzXkEyXkFqcGc@._V1_SX300.jpg",
+        "title": "The Punisher",
+        "year": "2017–2019",
+        "imdbID": "tt5675620",
+        "isFound": true
+      }
+    },
+    "title:black widow": {
+      "cachedAt": "2026-05-23T11:39:17.272Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTMyZTA0ZTItYjY3Yi00ODNjLWExYTgtYzgxZTk0NTg0Y2FlXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Black Widow",
+        "year": "2021",
+        "imdbID": "tt3480822",
+        "isFound": true
+      }
+    },
+    "title:thor: ragnarok": {
+      "cachedAt": "2026-05-23T11:39:17.347Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Thor: Ragnarok",
+        "year": "2017",
+        "imdbID": "tt3501632",
+        "isFound": true
+      }
+    },
+    "title:ant-man and the wasp": {
+      "cachedAt": "2026-05-23T11:39:17.546Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BODVkY2ZmZTAtYzFhMi00YzZlLWE2YWMtMDBiYjY2OTU4ZWM0XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Ant-Man and the Wasp",
+        "year": "2018",
+        "imdbID": "tt5095030",
+        "isFound": true
+      }
+    },
+    "title:avengers: infinity war": {
+      "cachedAt": "2026-05-23T11:39:17.584Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Avengers: Infinity War",
+        "year": "2018",
+        "imdbID": "tt4154756",
+        "isFound": true
+      }
+    },
+    "title:avengers: endgame": {
+      "cachedAt": "2026-05-23T11:39:17.604Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Avengers: Endgame",
+        "year": "2019",
+        "imdbID": "tt4154796",
+        "isFound": true
+      }
+    },
+    "title:loki": {
+      "cachedAt": "2026-05-23T11:39:17.691Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzA2YjM2ZWQtYTZhMS00OTI3LTlhYzQtZjBiZWZkMDdlNjA5XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Loki",
+        "year": "2021–2023",
+        "imdbID": "tt9140554",
+        "isFound": true
+      }
+    },
+    "title:spider-man: homecoming": {
+      "cachedAt": "2026-05-23T11:39:17.861Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BODY2MTAzOTQ4M15BMl5BanBnXkFtZTgwNzg5MTE0MjI@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Spider-Man: Homecoming",
+        "year": "2017",
+        "imdbID": "tt2250912",
+        "isFound": true
+      }
+    },
+    "title:wandavision": {
+      "cachedAt": "2026-05-23T11:39:17.905Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTMxMmM1ODItMTZiMS00NjI1LWEwODctMjQ4ZjY4ODliNDI0XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+        "title": "WandaVision",
+        "year": "2021",
+        "imdbID": "tt9140560",
+        "isFound": true
+      }
+    },
+    "title:spider-man: far from home": {
+      "cachedAt": "2026-05-23T11:39:17.926Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BMzNhNTE0NWQtN2E1Ny00NjcwLTg1YTctMGY1NmMwODJmY2NmXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+        "title": "Spider-Man: Far from Home",
+        "year": "2019",
+        "imdbID": "tt6320628",
+        "isFound": true
+      }
+    },
+    "title:shang-chi": {
+      "cachedAt": "2026-05-23T11:39:17.962Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmY5MDcyNzAtYzg3MC00MGNlLTg3OGItNmRjYThkZGVlNzAyXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Shang-Chi and the Legend of the Ten Rings",
+        "year": "2021",
+        "imdbID": "tt9376612",
+        "isFound": true
+      }
+    },
+    "title:the falcon & the winter soldier": {
+      "cachedAt": "2026-05-23T11:39:18.032Z",
+      "value": {
+        "poster": null,
+        "title": "The Falcon & the Winter Soldier",
+        "year": "",
+        "imdbID": "",
+        "isFound": false
+      }
+    },
+    "title:hawkeye": {
+      "cachedAt": "2026-05-23T11:39:18.237Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BOGU5ZDBlOTAtOTZmYS00MWE0LTg0NzktNDcxZGJhN2FhZmM2XkEyXkFqcGc@._V1_SX300.jpg",
+        "title": "Hawkeye",
+        "year": "2021",
+        "imdbID": "tt10160804",
+        "isFound": true
+      }
+    },
+    "title:moon knight": {
+      "cachedAt": "2026-05-23T11:39:18.283Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDAzNmYwZjgtNDc3YS00ZDMyLTk0MjktMTg4MGNmNGU3MjlhXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Moon Knight",
+        "year": "2022",
+        "imdbID": "tt10234724",
+        "isFound": true
+      }
+    },
+    "title:doctor strange in the multiverse of madness": {
+      "cachedAt": "2026-05-23T11:39:18.324Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2YxZGRjMzYtZjE1ZC00MDI0LThjZmQtZTZmMzVmMmQ2NzBmXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        "title": "Doctor Strange in the Multiverse of Madness",
+        "year": "2022",
+        "imdbID": "tt9419884",
+        "isFound": true
+      }
+    },
+    "title:ms. marvel": {
+      "cachedAt": "2026-05-23T11:39:18.373Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzlkNjBmOWUtOTgzZS00OWIzLThkNWEtZTg5MGY2ODAyYzZjXkEyXkFqcGc@._V1_SX300.jpg",
+        "title": "Ms. Marvel",
+        "year": "2022",
+        "imdbID": "tt10857164",
+        "isFound": true
+      }
+    },
+    "title:eternals": {
+      "cachedAt": "2026-05-23T11:39:18.457Z",
+      "value": {
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTBiZjI2M2UtZTNiNy00NmU4LWJiMjYtZjk4MDIzMzhlMjFlXkEyXkFqcGc@._V1_SX300.jpg",
+        "title": "Eternals",
+        "year": "2021",
+        "imdbID": "tt9032400",
+        "isFound": true
+      }
+    }
+  }
+}

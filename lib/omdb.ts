@@ -35,6 +35,7 @@ type CacheFile = {
 const cacheVersion = 1;
 const defaultCacheTtlSeconds = 60 * 60 * 24 * 365;
 const inflightRequests = new Map<string, Promise<OmdbLookupResult>>();
+let cacheWriteQueue = Promise.resolve();
 
 function getCacheFilePath() {
   return process.env.OMDB_CACHE_FILE || ".cache/omdb-cache.json";
@@ -108,6 +109,22 @@ async function readCache(): Promise<CacheFile> {
       return { version: cacheVersion, entries: {} };
     }
 
+    if (error instanceof SyntaxError) {
+      const cacheFilePath = getCacheFilePath();
+      const backupPath = `${cacheFilePath}.corrupt-${Date.now()}`;
+
+      try {
+        await fs.rename(
+          /* turbopackIgnore: true */ cacheFilePath,
+          /* turbopackIgnore: true */ backupPath,
+        );
+      } catch {
+        // If the backup fails, still let OMDB recover instead of bricking every lookup.
+      }
+
+      return { version: cacheVersion, entries: {} };
+    }
+
     throw error;
   }
 }
@@ -115,7 +132,9 @@ async function readCache(): Promise<CacheFile> {
 async function writeCache(cache: CacheFile) {
   const cacheFilePath = getCacheFilePath();
   const cacheDirectory = path.dirname(cacheFilePath);
-  const temporaryPath = `${cacheFilePath}.${process.pid}.tmp`;
+  const temporaryPath = `${cacheFilePath}.${process.pid}.${Date.now()}.${Math.random()
+    .toString(36)
+    .slice(2)}.tmp`;
 
   await fs.mkdir(/* turbopackIgnore: true */ cacheDirectory, { recursive: true });
   await fs.writeFile(
@@ -148,17 +167,27 @@ async function getCachedValue(cacheKey: string) {
 }
 
 async function setCachedValue(cacheKey: string, value: OmdbLookupResult) {
-  const cache = await readCache();
+  cacheWriteQueue = cacheWriteQueue
+    .catch(() => undefined)
+    .then(async () => {
+      const cache = await readCache();
 
-  cache.entries[cacheKey] = {
-    cachedAt: new Date().toISOString(),
-    value,
-  };
+      cache.entries[cacheKey] = {
+        cachedAt: new Date().toISOString(),
+        value,
+      };
 
-  await writeCache(cache);
+      await writeCache(cache);
+    });
+
+  await cacheWriteQueue;
 }
 
-async function fetchFromOmdb(input: OmdbLookupInput, apiKey: string) {
+function sleep(milliseconds: number) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+async function fetchFromOmdbOnce(input: OmdbLookupInput, apiKey: string) {
   const searchParams = new URLSearchParams({ apikey: apiKey });
 
   if (input.imdbId?.trim()) {
@@ -169,13 +198,37 @@ async function fetchFromOmdb(input: OmdbLookupInput, apiKey: string) {
     throw new Error("Provide title or imdbId");
   }
 
-  const response = await fetch(`https://www.omdbapi.com/?${searchParams}`);
+  const abortController = new AbortController();
+  const timeoutId = setTimeout(() => abortController.abort(), 8000);
+
+  const response = await fetch(`https://www.omdbapi.com/?${searchParams}`, {
+    signal: abortController.signal,
+  }).finally(() => clearTimeout(timeoutId));
 
   if (!response.ok) {
     throw new Error(`OMDB request failed with ${response.status}`);
   }
 
   return normalizeOmdbResponse((await response.json()) as OmdbResponse, input);
+}
+
+async function fetchFromOmdb(input: OmdbLookupInput, apiKey: string) {
+  const retryDelays = [250, 750];
+  let lastError: unknown;
+
+  for (let attempt = 0; attempt <= retryDelays.length; attempt += 1) {
+    try {
+      return await fetchFromOmdbOnce(input, apiKey);
+    } catch (error) {
+      lastError = error;
+
+      if (attempt < retryDelays.length) {
+        await sleep(retryDelays[attempt]);
+      }
+    }
+  }
+
+  throw lastError;
 }
 
 export async function getOmdbMovie(input: OmdbLookupInput, apiKey: string) {
