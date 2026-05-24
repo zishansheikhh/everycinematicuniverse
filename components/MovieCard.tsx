@@ -82,6 +82,7 @@ export default function MovieCard({
 
     fetch(`/api/omdb-poster?${searchParam}`, {
       signal: abortController.signal,
+      cache: "no-store",
     })
       .then(async (response) => {
         if (!response.ok) {
@@ -100,7 +101,6 @@ export default function MovieCard({
           return;
         }
 
-        posterCache.set(cacheKey, null);
         setPosterState({ cacheKey, poster: null, isLoading: false });
       });
 

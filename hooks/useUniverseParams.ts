@@ -75,6 +75,10 @@ function writeParams(params: UniverseParams) {
   const nextSearch = searchParams.toString();
   const nextUrl = `${window.location.pathname}${nextSearch ? `?${nextSearch}` : ""}${window.location.hash}`;
 
+  if (nextUrl === `${window.location.pathname}${window.location.search}${window.location.hash}`) {
+    return;
+  }
+
   window.history.replaceState(null, "", nextUrl);
 }
 
@@ -83,18 +87,16 @@ export function useUniverseParams(universeKeys: TimelineUniverseKey[]) {
 
   const updateParams = useCallback((updates: UpdateOptions) => {
     setParams((currentParams) => {
-      const nextParams = {
+      return {
         ...currentParams,
         ...updates,
       };
-
-      if (typeof window !== "undefined") {
-        writeParams(nextParams);
-      }
-
-      return nextParams;
     });
   }, []);
+
+  useEffect(() => {
+    writeParams(params);
+  }, [params]);
 
   useEffect(() => {
     function handlePopState() {
