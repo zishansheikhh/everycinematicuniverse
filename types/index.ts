@@ -60,7 +60,11 @@ export type TimelineUniverseKey =
   | "gameofthrones"
   | "alienpredator"
   | "mhcu"
-  | "yrfspy";
+  | "yrfspy"
+  | "bumilangit"
+  | "highlow"
+  | "lightchaser"
+  | "danur"
 
 export type TimelineUniverses = Record<TimelineUniverseKey, TimelineUniverse>;
 
